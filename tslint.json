@@ -1,0 +1,24 @@
+{
+	"defaultSeverity": "error",
+	"extends": ["tslint:recommended", "tslint-config-prettier"],
+	"jsRules": {
+		"no-unused-expression": true
+	},
+	"rules": {
+		"ordered-imports": false,
+		"object-literal-sort-keys": false,
+		"member-ordering": false,
+		"curly": false,
+		"no-console": false,
+		"radix": false,
+		"max-classes-per-file": false,
+		"no-empty": false,
+		"forin": false,
+		"no-shadowed-variable": false,
+		"no-namespace": false,
+		"no-string-literal": false,
+		"variable-name": false,
+		"no-nested-switch": false
+	},
+	"rulesDirectory": []
+}
