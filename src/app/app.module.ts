@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatNativeDateModule } from '@angular/material/core'
 import { RepeatTypeComponent } from './formly-types/repeat-type.formly.component'
+import { SampleJsonComponent } from './sample-json/sample-json.component';
+import { SampleModelComponent } from './sample-model/sample-model.component';
 
 export function validateRequired(err, field: FormlyFieldConfig) {
 	return `This field is required`
@@ -47,7 +49,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 }
 
 @NgModule({
-	declarations: [AppComponent, RepeatTypeComponent],
+	declarations: [AppComponent, RepeatTypeComponent, SampleJsonComponent, SampleModelComponent,],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
