@@ -4,19 +4,77 @@ import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core'
 import { HttpClient } from '@angular/common/http'
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.scss'],
+	selector: 'sample-json',
+	templateUrl: './sample-json.component.html',
+	styleUrls: ['./sample-json.component.scss'],
 })
-export class AppComponent {
-	title = 'Blog Application Template'
-  // form = new FormGroup({})
-  // options: FormlyFormOptions = {};
+export class SampleJsonComponent {
+	title = 'Sample Form from JSON'
+  //form = new FormGroup({})
+ // options: FormlyFormOptions = {};
 
   constructor(private http: HttpClient) { 
-    console.log('in const home')
+    console.log('in const')
+    let fields: FormlyFieldConfig[] = [
+      // {
+      //   "key": "Tags",
+      //   "type": "list",
+      //   "templateOptions": {
+      //     "label": "First Name",
+      //     "options": [
+      //       {
+      //         "value": "1",
+      //         "label": "Male"
+      //       },
+      //       {
+      //         "value": "2",
+      //         "label": "Female"
+      //       },
+      //       {
+      //         "value": "3",
+      //         "label": "I don't want to share that"
+      //       }
+      //     ]
+      //   }
+      // },
+      {
+        "key": "lastName",
+        "type": "input",
+        "templateOptions": {
+          "label": "Last Name"
+        }
+      },
+     
+    ];
+
+    this.form = new FormGroup({});
+    this.model = {
+      "firstName": "Joan",
+      "lastName": "of Arc"
+    };
+    this.fields = fields;
   }
-  
+
+  form: FormGroup;
+  options: FormlyFormOptions = {};
+  model: any;
+  fields: FormlyFieldConfig[];
+
+  /**
+   * Adjust the JSON fields loaded from the server.
+   */
+   mapFields(fields: FormlyFieldConfig[]) {
+    return fields.map(f => {
+      // Bind an observable to `color` field.
+      // if (f.key === 'color') {
+      //   f.type = 'radio';
+      //   f.templateOptions.options = this.userService.getColors();
+      // }
+
+      return f;
+    });
+  }
+
 	// model = { 
   //   email: "",
   //   terms_1: false,
@@ -174,14 +232,14 @@ export class AppComponent {
   //   },
 	// ]
 
-	// onSubmit() {
-	// 	if (this.form.valid) {
-  //     this.http.post('url', this.model, null).subscribe((response) => {
-  //       console.log('response:', response)
-  //     }, (error) => {
-  //       console.error('error:', error)
-  //     })
-  //   }
-  // }
+	onSubmit() {
+		if (this.form.valid) {
+      this.http.post('url', this.model, null).subscribe((response) => {
+        console.log('response:', response)
+      }, (error) => {
+        console.error('error:', error)
+      })
+    }
+  }
   
 }
