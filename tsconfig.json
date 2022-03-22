@@ -14,12 +14,25 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "paths": {
+      "ag-grid-angular": [
+        "./node_modules/ag-grid-angular"
+      ],
+      "ag-grid-community": [
+        "./node_modules/ag-grid-community"
+      ],
+      "lodash.concat": [
+        "./node_modules/lodash.concat"
+      ]
+    },
     "lib": [
       "es2018",
       "dom"
     ]
   },
   "angularCompilerOptions": {
+    "preserveSymlinks": true,
+    "enableIvy": false,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }

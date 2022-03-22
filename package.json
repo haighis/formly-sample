@@ -26,6 +26,9 @@
     "@ngx-formly/core": "^5.0.0",
     "@ngx-formly/material": "^5.0.0",
     "@ngx-formly/schematics": "^5.5.13",
+    "ag-grid-angular": "^27.0.0",
+    "ag-grid-community": "^27.0.1",
+    "lodash.concat": "^4.5.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

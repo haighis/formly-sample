@@ -10,7 +10,7 @@ import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core'
 import { FormlyMaterialModule } from '@ngx-formly/material'
 import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
 import { FormlyMatToggleModule } from '@ngx-formly/material/toggle';
-
+import { MyLibModule } from 'my-lib';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatDialogModule } from '@angular/material/dialog'
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -49,11 +49,12 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 }
 
 @NgModule({
-	declarations: [AppComponent, RepeatTypeComponent, SampleJsonComponent, SampleModelComponent,],
+	declarations: [AppComponent, RepeatTypeComponent, SampleJsonComponent, SampleModelComponent],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingModule,
+		MyLibModule,
 		BrowserAnimationsModule,
 
 		ReactiveFormsModule,

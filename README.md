@@ -1,5 +1,8 @@
 # AngularNgxFormlyMaterial
 
+## Install
+- `npm link my-lib npm install`
+
 ![angular-ngx-formly-screenshot](https://user-images.githubusercontent.com/6241164/76152033-5df96e00-60bb-11ea-86f0-4fb9807e836f.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
