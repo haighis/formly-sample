@@ -16,27 +16,23 @@ export class SampleJsonComponent {
   constructor(private http: HttpClient) { 
     console.log('in const')
     let fields: FormlyFieldConfig[] = [
-      // {
-      //   "key": "Tags",
-      //   "type": "list",
-      //   "templateOptions": {
-      //     "label": "First Name",
-      //     "options": [
-      //       {
-      //         "value": "1",
-      //         "label": "Male"
-      //       },
-      //       {
-      //         "value": "2",
-      //         "label": "Female"
-      //       },
-      //       {
-      //         "value": "3",
-      //         "label": "I don't want to share that"
-      //       }
-      //     ]
-      //   }
-      // },
+      {
+        "key": "Tags",
+        "type": "list",
+        "templateOptions": {
+          "dataitems": [
+            {
+              "label": "test 5"
+            },
+            {
+              "label": "test 1"
+            },
+            {
+              "label": "another test"
+            }
+          ]
+        }
+      },
       {
         "key": "lastName",
         "type": "input",
@@ -48,10 +44,10 @@ export class SampleJsonComponent {
     ];
 
     this.form = new FormGroup({});
-    this.model = {
-      "firstName": "Joan",
-      "lastName": "of Arc"
-    };
+    // this.model = {
+    //   "firstName": "Joan",
+    //   "lastName": "of Arc"
+    // };
     this.fields = fields;
   }
 
@@ -59,21 +55,6 @@ export class SampleJsonComponent {
   options: FormlyFormOptions = {};
   model: any;
   fields: FormlyFieldConfig[];
-
-  /**
-   * Adjust the JSON fields loaded from the server.
-   */
-   mapFields(fields: FormlyFieldConfig[]) {
-    return fields.map(f => {
-      // Bind an observable to `color` field.
-      // if (f.key === 'color') {
-      //   f.type = 'radio';
-      //   f.templateOptions.options = this.userService.getColors();
-      // }
-
-      return f;
-    });
-  }
 
 	// model = { 
   //   email: "",

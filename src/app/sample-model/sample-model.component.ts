@@ -37,20 +37,18 @@ export class SampleModelComponent {
         required: true,
       },
     },
-    // {
-    //   key: 'tags',
-    //   type: 'list',
-    //   templateOptions: {
-    //     label: 'Tags',
-    //     placeholder: 'Enter name',
-    //     required: true,
-    //         options: [
-    //       { value: 1, label: 'Male' },
-    //       { value: 2, label: 'Female' },
-    //       { value: 3, label: 'I don\'t want to share that' },
-    //     ],
-    //   },
-    // },
+    {
+      key: 'tags',
+      type: 'list',
+      templateOptions: {
+        label: 'Tags',
+        dataitems: [
+          { label: 'Male' },
+          { label: 'Female' },
+          { label: 'I don\'t want to share that' },
+        ]
+      },
+    },
     // {
     //   key: 'email',
     //   type: 'input',

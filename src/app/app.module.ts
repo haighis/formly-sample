@@ -2,12 +2,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { BrowserModule } from '@angular/platform-browser'
 import { HttpClientModule }    from '@angular/common/http';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
-
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+import {ButtonModule} from 'primeng/button';
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { ReactiveFormsModule, FormControl, ValidationErrors } from '@angular/forms'
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core'
 import { FormlyMaterialModule } from '@ngx-formly/material'
+//import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
+
 import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
 import { FormlyMatToggleModule } from '@ngx-formly/material/toggle';
 import { MyLibModule } from 'my-lib';
@@ -20,9 +23,23 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatNativeDateModule } from '@angular/material/core'
+import { ListTypeComponent } from './formly-types/list-type.component';
 import { RepeatTypeComponent } from './formly-types/repeat-type.formly.component'
 import { SampleJsonComponent } from './sample-json/sample-json.component';
 import { SampleModelComponent } from './sample-model/sample-model.component';
+import { PageComponent } from './page/page.component';
+
+// PrimeNG
+// import {SidebarModule} from 'primeng/sidebar';
+
+// import { ButtonModule } from 'primeng/button';
+// import {SplitterModule} from 'primeng/splitter';
+// import {DividerModule} from 'primeng/divider';
+// import {AccordionModule} from 'primeng/accordion';
+// import {CardModule} from 'primeng/card';
+// import {FieldsetModule} from 'primeng/fieldset';
+// import {PanelModule} from 'primeng/panel';
+// import {TabViewModule} from 'primeng/tabview';
 
 export function validateRequired(err, field: FormlyFieldConfig) {
 	return `This field is required`
@@ -49,12 +66,13 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 }
 
 @NgModule({
-	declarations: [AppComponent, RepeatTypeComponent, SampleJsonComponent, SampleModelComponent],
+	declarations: [AppComponent, RepeatTypeComponent, ListTypeComponent, SampleJsonComponent, SampleModelComponent, PageComponent],
 	imports: [
 		BrowserModule,
 		HttpClientModule,
 		AppRoutingModule,
 		MyLibModule,
+		ButtonModule,
 		BrowserAnimationsModule,
 
 		ReactiveFormsModule,
@@ -71,6 +89,17 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 		FormlyMatDatepickerModule,
 		FormlyMatToggleModule,
 
+		BreadcrumbModule,
+        // SidebarModule,
+       // ButtonModule,
+        // SplitterModule,
+        // DividerModule,
+        // AccordionModule,
+        // CardModule,
+        // FieldsetModule,
+        // PanelModule,
+        // TabViewModule,
+		
 		FormlyModule.forRoot({
 			validationMessages: [
 				{ name: 'required', message: validateRequired },
@@ -86,9 +115,10 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 			],
 			types: [
 				{ name: 'repeat', component: RepeatTypeComponent },
+				{ name: 'list', component: ListTypeComponent },
 			],
 		}),
-		FormlyMaterialModule,
+		FormlyMaterialModule
 	],
 	providers: [],
 	bootstrap: [AppComponent],

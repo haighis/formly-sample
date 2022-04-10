@@ -1,0 +1,56 @@
+<div class="container">
+<h1>{{ title }}</h1>
+<p-breadcrumb [model]="items"></p-breadcrumb>
+<!-- <ul>
+    <li *ngFor="let item of items">
+        {{item.id}}_{{item.title}}
+    </li>
+</ul> -->
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <formly-form [form]="form" [fields]="fields" [model]="model" [options]="options"></formly-form>
+    <!-- <button type="button" mat-raised-button color="warn" (click)="options.resetModel()">Reset</button>
+    <button type="submit" mat-raised-button color="primary">Submit</button> -->
+</form>
+
+<pre>
+  
+</pre>
+</div>
+<mango-table-data-editor></mango-table-data-editor>
+<!-- 
+<div class="overflow-hidden content-margin container-fluid" style="width: 50%;">
+
+   
+  
+ 
+    <form class="form-horizontal" [formGroup]="formGroup">
+
+        <dynamic-ng-bootstrap-form 
+            [group]="formGroup"            
+            [model]="formModel">
+        </dynamic-ng-bootstrap-form>
+
+    </form>
+
+    <p-card [hidden]="!showEmptyState">
+        No pixels here
+    </p-card>
+   
+
+</div> -->
+
+
+   <!-- <button (click)="store()" type="button">Store JSON</button>
+    <button (click)="output_formmodel()" type="button">Show Form Model</button>
+    <button (click)="output_datastore()" type="button">Show Data Store</button>
+    <button (click)="restore()" type="button">Restore JSON</button>
+     -->
+    
+      <!-- [layout]="formLayout" <div>Username:  {{per.username}}</div> 
+    
+         (blur)="onBlur($event)"
+            (change)="onChange($event)"
+            (focus)="onFocus($event)"
+            (ngbEvent)="onNgbEvent($event)"
+    
+    -->
